@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Aceland&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+ 
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Logo Macronutrix">
+            <span>Macronutrix</span>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Calculadora.html">Calculadora</a></li>
+                <li><a href="ALIMENTOS.html">Alimentos</a></li>
+                <li class="dropdown">
+                    <a href="#" id="user-icon" class="btn-login">
+                        <i class='fas fa-user-alt'></i>
+                    </a>
+                    <div id="dropdown-menu" class="dropdown-content">
+                        <a id="login-option" href="login.html">Iniciar Sesión</a>
+                        <a id="register-option" href="register.html">Registrarse</a>
+                        <a id="profile-option" href="perfil.html">Mi Perfil</a>
+                        <a id="logout-option" href="#">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+       
+    </div>
+    
+    <div class="container">
+        <h1>Encuesta de Satisfacción</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="gusto">¿Qué es lo que más te gustó de nuestra página?</label>
+                <textarea id="gusto" name="gusto" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="progreso">¿Cómo ha sido tu progreso con las recetas que te hemos brindado?</label>
+                <textarea id="progreso" name="progreso" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="tiempo">¿Cuánto tiempo llevas utilizando nuestras recetas?</label>
+                <div style="display: flex; align-items: center;">
+                    <input type="number" id="cantidad" name="cantidad" min="1" required style="margin-right: 10px;">
+                    <select id="tiempo" name="tiempo" required>
+                        <option value="" disabled selected>Selecciona una unidad</option>
+                        <option value="dias">Días</option>
+                        <option value="meses">Meses</option>
+                        <option value="años">Años</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sugerencias">¿Tienes alguna sugerencia para mejorar nuestra página?</label>
+                <textarea id="sugerencias" name="sugerencias" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>¿Recomendarías nuestra página a otros?</label>
+                <label><input type="radio" name="recomendar" value="sí" required> Sí</label>
+                <label><input type="radio" name="recomendar" value="no"> No</label>
+            </div>
+
+            <button type="submit">Enviar Encuesta</button>
+        </form>
+    </div>
+    
+    <script src="js/perfil.js"></script>
+    <script src="js/index.js"></script>
+  
+
+</body>
+</html>
+

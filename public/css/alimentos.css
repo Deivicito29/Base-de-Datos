@@ -1,0 +1,1008 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Iceland", sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #000000 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+/* Menú y navegación */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #000000;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 30px;
+}
+
+.logo {
+    color: #C8102E;
+    font-size: 2rem;
+    font-weight: 800;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar a {
+    color: var(--menu-text);
+    font-weight: 500;
+    text-decoration: auto;
+}
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #C8102E;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover {
+    color: #C8102E;
+}
+
+/* Búsqueda y filtros */
+.search-container {
+    background: white;
+    padding: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.search-container:hover {
+    transform: translateY(-5px);
+}
+
+.search-input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-input-group input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input-group input:focus {
+    border-color: #C8102E;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200,16,46,0.1);
+}
+
+.search-filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-group select:hover,
+.filter-group input:hover {
+    border-color: #C8102E;
+}
+
+/* Tarjetas de nutrición */
+.nutrition-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #C8102E, #ff4d6d);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #C8102E 0%, #ff4d6d 100%);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: rotate(360deg);
+}
+
+/* Menú diario */
+.daily-menu {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.date-selector {
+    margin-bottom: 1.5rem;
+}
+
+.date-selector input {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.date-selector input:hover {
+    border-color: #C8102E;
+}
+
+
+.meal-section h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.meal-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #C8102E;
+}
+
+.meal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.meal-item:hover {
+    transform: translateX(5px);
+    border-color: #C8102E;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.meal-item-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.meal-item-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.meal-item:hover .meal-item-info img {
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .menu {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: black;
+        padding: 1rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.active {
+        transform: translateY(0);
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .search-filters {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    .nutrition-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .meal-item-info {
+        flex-direction: column;
+    }
+}
+
+/* Temas oscuro/claro */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+        color: #f7fafc;
+    }
+
+    .search-container,
+    .card,
+    .daily-menu {
+        background: #2d3748;
+        color: #f7fafc;
+    }
+
+    .meal-item {
+        background: #1a202c;
+    }
+
+    .meal-item:hover {
+        background: #2d3748;
+    }
+
+    .filter-group select,
+    .filter-group input,
+    .search-input-group input,
+    .date-selector input {
+        background: #1a202c;
+        color: #f7fafc;
+        border-color: #4a5568;
+    }
+}
+
+.food-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.nutrition-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: var(--bg-secondary);
+    border-radius: 0.5rem;
+}
+
+.macro-nutrient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.macro-nutrient i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.badge.seasonal {
+    background: #22c55e;
+    color: white;
+}
+
+.food-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.btn-add {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-add:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+:root {
+    --primary-color: #C8102E;
+    --text-light: #ffffff;
+    --text-dark: #2d3748;
+    --bg-card: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+[data-theme="dark"] {
+    --primary-color: #ff4d6d;
+    --primary-dark: #ff3357;
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d3748;
+    --card-bg: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #cbd5e0;
+}
+
+/* Mejoras en la responsividad */
+@media (max-width: 480px) {
+    .nutrition-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+S
+    .add-to-menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    max-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3 ease;
+    right: 0;
+    top: 100%;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    opacity: 1;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+@media (max-width: 768px) {
+    .dropdown-content {
+        min-width: 120px;  
+        left: -50px; 
+    } 
+}
+.recipe-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.recipe-modal-content {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.ingredients-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--bg-secondary);
+}
+
+.preparation-steps {
+    margin-bottom: 1.5rem;
+}
+
+.preparation-steps p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.recipe-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+}
+
+.btn-recipe {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-recipe:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.btn-close:hover {
+    color: var(--primary-color);
+}
+
+/* Estilos para el formulario de agregar receta */
+.add-recipe-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    width: 90%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200,16,46,0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* Mejoras en la responsividad */
+@media (max-width: 768px) {
+    .recipe-modal-content {
+        padding: 1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.food-card {
+    background: var(--bg-card);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen del alimento */
+.food-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Información del alimento */
+.food-info {
+    padding: 1.5rem;
+    color: var(--text-dark);
+}
+
+.food-info h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+}
+
+/* Botones de acción */
+.meal-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.meal-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.meal-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.meal-btn i {
+    font-size: 1rem;
+}
+
+/* Secciones de comidas */
+.meal-section {
+    background: #303c52;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.meal-section h3 {
+    color: white;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Información nutricional */
+.nutrition-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.nutrition-item {
+    text-align: center;
+}
+
+.nutrition-item span {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .food-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .meal-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .nutrition-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*iconos de footer*/
+.iconos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  
+  }
+  .icon{
+    position: relative;
+    background: #000000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all .2s;
+  }
+  
+  .icon span{
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon .tooltip{
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .icon .tooltip::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    transform: translate(-50%) rotate(45deg);
+    transition: all .3s;
+  }
+  
+  .icon:hover .tooltip{
+    opacity: 1;
+    top: -45px;
+    pointer-events: auto;
+  }
+  
+  .icon:hover,
+  .icon:hover .tooltip,
+  .icon:hover .tooltip::before{
+    background: var(--bg);
+    color: #fff;
+  }
+  
+  
+  /*Pie de Pagina (footer)*/
+  .pie-pagina{
+    width: 100%;
+    background-color: #000000;
+    padding: 10px 0;
+  
+  }
+  .pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+  }
+  .pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+  }
+  .pie-pagina .grupo-1 .box h2{
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 20px;
+    
+  }
+  .pie-pagina .grupo-1 .box p{
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  .pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff;
+    margin-right: 10px;
+    background-color: #000000;
+    text-align: center;
+    transition: all 300ms ease;
+  }
+  .pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+  }
+  .pie-pagina .grupo-2{
+    background-color: #000000;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+  }
+  .pie-pagina .grupo-2 small{
+    font-size: 20px;
+  }
+  @media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  body::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+    overflow: overlay;
+   }
+   
+   body::-webkit-scrollbar-thumb {
+    background: #E73426;
+    border-radius: 20px;
+    border-right: 5px;
+    
+   }
+   
+   body::-webkit-scrollbar-thumb:hover{
+    background-color: #E73426;
+   }
+   
+   html{
+    scrollbar-width: thin;
+    scrollbar-color: #E73426 #fff;
+   }

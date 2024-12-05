@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="css/style2.0.css">
+</head>
+<body>
+    <header class="header">
+    <div class="wrapper">
+        <form id="login-form" class="form">
+            <img src="img/logo.png" alt="LOGO MACRO"><h1 class="title">Inicio</h1>
+            <div class="inp">
+
+                <input type="email" id="login-email" class="input" placeholder="" aria-label="Email" required autocomplete="username">
+                <label for="login-email">Email</label>
+            </div>
+            <div class="inp">
+                <input type="password" id="login-password" class="input" placeholder="" aria-label="Contraseña" required autocomplete="current-password">
+                <label for="login-password">Contraseña</label>
+            </div>
+            <button type="submit" class="submit">Iniciar Sesión</button>
+            <br>
+            <div class="social-networks">
+                <a href="http://localhost:3002/auth/google/callback" target="_blank">
+                    <ion-icon name="logo-google"></ion-icon>
+                </a>
+                
+                <ion-icon name="logo-facebook"></ion-icon>
+              
+            </div>
+            <a href="pagina olvido su contraseña.html" class="link">¿Olvidaste tu contraseña?</a>
+            <br>
+            <p class="footer">¿No tienes cuenta? <a href="register.html" class="link">Por favor, regístrate</a></p>
+        </form>
+        <div class="banner">
+            <h1 class="wel_text">Bienvenido<br></h1>
+            <p class="para">Gracias por visitarnos</p>
+        </div>
+    </div>
+    </header>  
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

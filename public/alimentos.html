@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nutrición Inteligente - Tu asistente personal para una alimentación saludable">
+    <title>Nutrición Inteligente</title>
+    <link rel="stylesheet" href="css/alimentos.css">
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Logo Macronutrix">
+            <span>Macronutrix</span>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Calculadora.html">Calculadora</a></li>
+                <li><a href="ALIMENTOS.html">Alimentos</a></li>
+                <li class="dropdown">
+                    <a href="#" id="user-icon" class="btn-login">
+                        <i class='fas fa-user-alt'></i>
+                    </a>
+                    <div id="dropdown-menu" class="dropdown-content">
+                        <a id="login-option" href="login.html">Iniciar Sesión</a>
+                        <a id="register-option" href="register.html">Registrarse</a>
+                        <a id="profile-option" href="perfil.html">Mi Perfil</a>
+                        <a id="logout-option" href="#">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+       
+    </div>
+
+    <div class="container">
+        <div class="search-container slide-in">
+            <div class="search-input-group">
+                <input type="text" id="searchInput" placeholder="Buscar alimentos...">
+                <button id="searchButton" class="btn-search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label for="categoryFilter">Categoría</label>
+                    <select id="categoryFilter">
+                        <option value="todos">Todas las categorías</option>
+                        <option value="1">Proteínas</option>
+                        <option value="2">Carbohidratos</option>
+                        <option value="3">Grasas</option>
+                        <option value="4">Verduras</option>
+                        <option value="5">Frutas</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="caloriesFilter">Calorías máximas</label>
+                    <input type="number" id="caloriesFilter" min="0" step="50">
+                </div>
+                <div class="filter-group">
+                    <label for="sortBy">Ordenar por</label>
+                    <select id="sortBy">
+                        <option value="nombre">Nombre</option>
+                        <option value="calorias">Calorías</option>
+                        <option value="proteinas">Proteínas</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="nutrition-cards fade-in">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Calorías</h3>
+                    <p><span id="calories">0</span> kcal</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="calories-progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-drumstick-bite"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Proteínas</h3>
+                    <p><span id="protein">0</span> g</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="protein-progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bread-slice"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Carbohidratos</h3>
+                    <p><span id="carbs">0</span> g</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="carbs-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dailyMenu" class="daily-menu slide-in">
+            <div class="date-selector">
+                <input type="date" id="menuDate">
+            </div>
+
+            <div class="meal-section">
+                <h3>Desayuno</h3>
+                <div id="breakfastItems" class="meal-items"></div>
+            </div>
+
+            <div class="meal-section">
+                <h3>Almuerzo</h3>
+                <div id="lunchItems" class="meal-items"></div>
+            </div>
+
+            <div class="meal-section">
+                <h3>Cena</h3>
+                <div id="dinnerItems" class="meal-items"></div>
+            </div>
+
+            <div class="meal-section">
+                <h3>Snacks</h3>
+                <div id="snacksItems" class="meal-items"></div>
+            </div>
+        </div>
+
+        <div id="searchResults" class="search-results fade-in"></div>
+    </div>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="img/Calculadora Macronutrix.png" alt="Logo de Macronutrix">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p><a href="terminos y condiciones.html">Términos y Condiciones</a></p>
+                <p><a href="privacidad.html">Política de Privacidad</a></p>
+                <p><a href="cookies.html">Política de Cookies</a>
+                </p>
+
+            </div>
+            <div class="box">
+                <center><h2>SIGUENOS</h2></center>
+        
+                <div class="iconos">
+
+                    <a href="https://www.facebook.com/Macro.Nutrix2024/" target="_blank" rel="noopener noreferrer">
+                    <div class="icon" style="--bg: #0011ff;">
+                        <span class="tooltip">Facebook</span>
+                        <span><i class='bx bxl-facebook'></i></span>
+                    </div>
+                </a>
+
+                    <a href="https://www.instagram.com/macronutrix2024/" target="_blank" rel="noopener noreferrer">
+                    <div class="icon" style="--bg: #ff00ea;">
+                        <span class="tooltip">Instagram</span>
+                        <span><i class='bx bxl-instagram'></i></span>
+                    </div>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@macronutrix" target="_blank" rel="noopener noreferrer">
+                    <div class="icon" style="--bg: #4e4e4e;">
+                        <span class="tooltip">TikTok</span>
+                        <span><i class='bx bxl-tiktok'></i></span>
+                    </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/@Macronutrix2024" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--bg: #ff0000;">
+                            <span class="tooltip">Suscríbete</span>
+                            <span><i class='bx bxl-youtube'></i></span>
+                        </div>
+                    </a>
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Macronutrix</b> - Todos los Derechos Reservados.</small>
+        </div>
+    
+    </footer>
+    <script src="js/alimentos.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

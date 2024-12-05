@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: #fff
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Iceland", sans-serif;
+    font-style: normal;
+    background: #000000;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+::-webkit-input-placeholder{
+    color: #eee;
+}
+
+.wrapper{
+    position: relative;
+    width: 800px;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 3px solid#c6102e;
+    box-shadow: 0 0 50px 0 #ffffff;
+}
+
+.banner {
+    position:absolute;
+    top: 0%;
+    right: 0%;
+    width: 450px;
+    height: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 0), #be1515);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%);
+    padding-right: 70px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.wel_text{
+    font-size: 52px;
+    margin-top: -50px;
+    line-height: 50px;
+}
+
+.para{
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   margin-right: 10px;
+}
+.title{
+   font-size: 28px;
+}
+
+.inp{
+   padding-bottom: 0px;
+   border-bottom:1px solid #eee;
+}
+
+.input{
+   border: none;
+   outline: none;
+   background: none;
+   margin-top: 20px;
+   font-size: 17px;
+   color: rgb(255, 255, 255);
+
+}
+.submit{
+    font-family: "Iceland", sans-serif;
+    border: none;
+    outline: none;
+    width: 200px;
+    margin-top: 25px;
+    padding: 10px 0;
+    font-size: 22px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background:linear-gradient(45deg, rgb(0, 0, 0), #c6102e);
+}
+
+.footer{
+
+    letter-spacing: 0.4px;  
+    font-size: 16px;
+}
+
+.link{
+    color: #0ef;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social-networks {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.social-networks ion-icon {
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+.inp {
+    position: relative;
+    margin-bottom: 20px;
+}
+.inp input {
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.inp input[aria-label]::placeholder {
+    color: transparent;
+}
+.inp input[aria-label]:not(:placeholder-shown) + label,
+.inp input[aria-label]:focus + label {
+    top: 0;
+    left: 10px;
+    color: #ffffff;
+    font-size: 18px;
+}
+.inp label {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    transition: 0.2s;
+    pointer-events: none;
+    color: #ffffff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+    overflow: overlay;
+   }
+   
+   body::-webkit-scrollbar-thumb {
+    background: #E73426;
+    border-radius: 20px;
+    border-right: 5px;
+    
+   }
+   
+   body::-webkit-scrollbar-thumb:hover{
+    background-color: #E73426;
+   }
+   
+   html{
+    scrollbar-width: thin;
+    scrollbar-color: #E73426 #fff;
+   }

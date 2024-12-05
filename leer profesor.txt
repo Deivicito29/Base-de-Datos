@@ -1,0 +1,3 @@
+cambiar el archivo .txt A .env
+
+instalar el node

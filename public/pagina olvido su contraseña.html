@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olvidé mi Contraseña</title>
+    <link rel="stylesheet" href="css/style2.0.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form id="forgot-password-form" class="form">
+            <img src="img/logo.png" alt="LOGO MACRO">
+            <br>
+            <h1 class="title">Restablecer</h1>
+            <br>
+            <div class="inp">
+                <input type="email" id="reset-email" class="input" placeholder=" " aria-label="Introduce tu correo" required>
+                <label for="reset-email">Introduce tu correo</label>
+            </div>
+            <button class="submit" type="submit">Enviar enlace</button>
+            <br>
+            <div class="social-networks">
+                <ion-icon name="logo-google"></ion-icon>
+                <ion-icon name="logo-facebook"></ion-icon>
+            </div>
+            <p class="footer">¿Ya tienes cuenta? <a href="login.html" class="link">Inicia Sesión</a></p>
+        </form>
+        <div class="banner">
+            <h1 class="wel_text">Bienvenidos<br></h1>
+            <p class="para">Recupera tu acceso fácilmente</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('forgot-password-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const email = document.getElementById('reset-email').value;
+            const response = await fetch('/forgot-password', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            if (response.ok) {
+                alert('Se ha enviado un enlace a tu correo.');
+            } else {
+                alert('Error al enviar el correo. Inténtalo nuevamente.');
+            }
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

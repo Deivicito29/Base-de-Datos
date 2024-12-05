@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perfil</title>
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/perfil.css">
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Logo Macronutrix">
+            <span>Macronutrix</span>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Calculadora.html">Calculadora</a></li>
+                <li><a href="ALIMENTOS.html">Alimentos</a></li>
+                <li class="dropdown">
+                    <a href="#" id="user-icon" class="btn-login">
+                        <i class='fas fa-user-alt'></i>
+                    </a>
+                    <div id="dropdown-menu" class="dropdown-content">
+                        <a id="login-option" href="login.html">Iniciar Sesión</a>
+                        <a id="register-option" href="register.html">Registrarse</a>
+                        <a id="profile-option" href="perfil.html">--------</a>
+                        <a id="logout-option" href="#">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img id="avatarImage" src="" alt="img-avatar">
+                    <button type="button" class="boton-avatar" id="cambiarAvatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+                <button type="button" class="boton-portada" id="cambiarPortada">
+                    <i class="far fa-image"></i> Cambiar fondo
+                </button>
+            </div>          
+            <input type="file" id="inputAvatar" style="display: none;" accept="image/*">
+            <input type="file" id="inputPortada" style="display: none;" accept="image/*">
+        </div>
+
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <div class="perfil-usuario-header">
+                    <h1 id="perfilNombre">Nombre de usuario</h1>
+                </div>
+
+                <p class="texto" id="descripcion-bio" onclick="editarCampo(this)" data-field="bio">
+                    Escribe algo sobre ti...
+                </p>
+                <i class="fas fa-pencil-alt editable-icon"></i>
+            </div>
+            
+            <div class="perfil-usuario-info">
+                <div class="info-item">
+                    <i class="icono fas fa-envelope"></i>
+                    <span>Correo:</span>
+                    <p id="perfilCorreo" onclick="editarCampo('perfilCorreo')" data-field="email">
+                        usuario@email.com 
+                        <i class="fas fa-pencil-alt editable-icon"></i>
+                    </p>
+                    <i class="fas fa-pencil-alt editable-icon"></i>
+                </div>
+                <div class="info-item">
+                    <i class="icono fas fa-user-alt"></i>
+                    <span>Edad</span>
+                    <p id="edadusuario" onclick="editarCampo('edadusuario')" data-field="edad">
+                        18
+                    </p>
+                    <i class="fas fa-pencil-alt editable-icon"></i>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h2>Mi Progreso</h2>
+                
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span class="progress-title">Progreso hacia el objetivo</span>
+                        <span class="progress-value">75%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" data-percent="75"></div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card" data-stat-type="peso">
+                        <div class="stat-value">--</div>
+                        <div class="stat-label">Peso Actual</div>
+                    </div>
+                    <div class="stat-card" data-stat-type="objetivo">
+                        <div class="stat-value">--</div>
+                        <div class="stat-label">Peso Objetivo</div>
+                    </div>
+                    <div class="stat-card" data-stat-type="altura">
+                        <div class="stat-value">--</div>
+                        <div class="stat-label">Altura</div>
+                    </div>
+                    <div class="stat-card" data-stat-type="imc">
+                        <div class="stat-value">--</div>
+                        <div class="stat-label">IMC</div>
+                    </div>
+                    <div class="stat-card" data-stat-type="actividad">
+                        <div class="stat-value">--</div>
+                        <div class="stat-label">Nivel de actividad</div>
+                    </div>
+                    <div class="stat-card" data-stat-type="tmb">
+                        <div class="stat-value">--</div>
+                        <div class="stat-label">TMB</div>
+                    </div>
+                    <div class="stat-card" data-stat-type="tdee">
+                        <div class="stat-value">--</div>
+                        <div class="stat-label">TDEE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <script src="js/perfil.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
